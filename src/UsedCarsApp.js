@@ -31,36 +31,18 @@ class UsedCarsApp extends Component{
 
     //This method is run from the UsedCarsView (the delete button)
     deleteCar = function(target){
-        const carId = Number(target.getAttribute("id"));
-        const filteredCars = this.state.cars.filter((car)=>car.id !== carId);
-        this.setState({cars: filteredCars});
+
 
     }
+
     //This method is run from the UsedCarsView (edit buttons) in order to fill the CarInput component with the appropriate data.
     grabCar = function(target){
-        const carId = Number(target.getAttribute("id")); //taken from the <a> for edit link in UsedCarsView
-        const theCar = this.state.cars.filter((car)=>car.id===carId)[0]; //filter returns array with only one car (index: 0)
-        this.setState({car: theCar});
+
     }
 
     //This method is run from the CarInput Component with the data from the user form.
     submitCar = function(newCar){
-        const cars = this.state.cars;
-        //If it is a new car (no id)
-        if(!newCar.id){
-            const id = this.getHighestID(this.state.cars);
-            newCar.id = id+1;
-            console.log(newCar);
-            cars.push(newCar);
-        } else { //If the car is in the list do update
-            cars.forEach(function (oldCar, index) {
-                if (oldCar.id === newCar.id) {
-                    cars[index] = newCar;
-                }
-            });
-        }
-        const clone = this.state.cars.slice(0);
-        this.setState({cars: clone});
+
     }
 
 
